@@ -1,0 +1,103 @@
+{% extends "base.html" %} 
+ 
+{% block content%}
+   {%from "_macros.html" import render_field%}
+
+<link rel="stylesheet" type="text/css" href="static/sweetalert2/sweetalert2.min.css">
+
+<script type="text/javascript" src="static/sweetalert2/sweetalert2.min.js" ></script>
+
+<link rel="stylesheet" href="static/estilos.css" >
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card mt-2">
+            <div class="card-header" style="background-color: #3081B5; color: #fff">
+                 <font face="Cavolini" size="4">Productos</font> 
+            </div>
+            <div class="card-body" style="background-color:  #D9D9D9">
+                <div class="row">
+                    <div id="" class="col-sm-3">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #3081B5; color: #fff">
+                                <font face="Cavolini" size="4">Detalles</font> 
+                                <div class="form-inline float-right">
+                                    
+                                </div>
+                            </div>
+                            <form name="sent" class="card-body" action="/security/administracion" id="form1" method="POST">
+                                <div class="form-control">
+                                    <div class="form">
+                                    <div class="form-group">
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                            {{render_field(form.Nombre,class='form-control',placeholder='Ingresa el nombre')}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                            {{render_field(form.Precio,class='form-control',placeholder='Ingresa el precio')}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                            {{render_field(form.Descripcion,class='form-control',placeholder='Ingresa la descripcion')}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group col-xs-12 float-label-form-group controls">
+                                            {{render_field(form.Image_url,class='form-control',placeholder='Ingresa la url')}}
+                                        </div>
+                                    </div>
+                                    <input type="submit" id="reg-alum" class="btn btn-primary" name="registra" value="Registrar"/>
+                                </div>
+                                </div>
+                            </form>   
+                        </div>                        
+                    </div>
+                    <div id="" class="col-sm-9">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #3081B5; color: #fff">
+                                <font face="Cavolini" size="4">Lista de Productos</font> 
+                                <div class="form-inline float-right">
+                                    
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="" style="background-color: #D97B29">
+                                                <tr class="tr-head" >
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Eliminar</th>
+                                                    <th>Modificar</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {%for prod in productos%}
+                                                <tr>
+                                                    <td>{{prod.nombre}}</td>
+                                                    <td>{{prod.precio}}</td>
+                                                    <td>{{prod.descripcion}}</td>
+                                                    <td><a href="eliminar?id={{prod.id}}" 
+                                                        class="btn btn-danger"><i class="icon-remove icon-white"></i>Eliminar</a></td>
+                                                    <td><a href="modificar?id={{prod.id}}" 
+                                                        class="btn btn-warning"><i class="icon-pencil icon-white"></i>Modificar</a></td>
+                                                </tr>
+                                                {%endfor%}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+{% endblock %}

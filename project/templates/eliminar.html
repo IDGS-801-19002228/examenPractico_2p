@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+ 
+ {% block content%}
+   {%from "_macros.html" import render_field%}
+
+    <div class="container-fluid">
+        <div class="form-group">
+            <div class="card-header" style="background-color: #C2513F; color: #fff">
+                <font face="Cavolini" size="4">Productos</font> 
+                <div class="form-inline float-right">
+                </div>
+            </div>
+            <form name="sent" class="card-body" action="/security/eliminar" id="form1" method="POST">
+                <div class="form-group">
+                    <div class="col-xs-12 float-label-form-group controls">
+                        {{render_field(form.id,class='form-control')}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{render_field(form.Nombre,class='form-control')}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{render_field(form.Precio,class='form-control')}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{render_field(form.Descripcion,class='form-control')}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group col-xs-12 float-label-form-group controls">
+                        {{render_field(form.Image_url,class='form-control',placeholder='Ingresa la descripcion')}}
+                    </div>
+                </div>
+                <input type="submit" id="reg-alum" class="btn btn-danger" name="registra" value="Eliminar"/>
+                <a class="btn btn-info" href="administracion" role="button">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

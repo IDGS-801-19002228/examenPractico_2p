@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="static/estilos.css" >
+<section method="POST" action="/security/login" class="vh-100 gradient-custom">
+    <div method="POST" action="/security/login" class="container py-5 h-100">
+      <div method="POST" action="/security/login" class="row d-flex justify-content-center align-items-center h-100">
+        <div method="POST" action="/security/login" class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div method="POST" action="/security/login" class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div method="POST" action="/security/login" class="card-body p-5 text-center">
+                
+                <form method="POST" action="/security/login" >
+                    
+  
+                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    <p class="text-white-50 mb-5">Por favor introduce tu usuario y contraseña!</p>
+  
+                    <div method="POST" action="/security/login" class="form-outline form-white mb-4">
+                        <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" autofocus=""/>
+                        <label class="form-label" for="typeEmailX">Email</label>
+                    </div>
+  
+                    <div method="POST" action="/security/login" class="form-outline form-white mb-4">
+                        <input class="form-control form-control-lg" type="password" name="password" placeholder="Password" />
+                        <label class="form-label" for="typePasswordX">Password</label>
+                    </div>
+  
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Recuerdame
+                        </label>
+                    </div>
+                    <button method="POST" action="/security/login" class="btn btn-outline-light btn-lg px-5" style="color:black;">Login</button>
+                    <!--<button class="btn btn-outline-light btn-lg px-5"  style="color:black" >Login</button>-->
+  
+                    <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                    </div>
+  
+                </form>
+  
+              <div>
+                <p class="mb-0">No tienes una cuenta? <a href="{{ url_for('auth.register') }}" class="text-white-50 fw-bold">Registrate</a></p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+{% endblock %}
